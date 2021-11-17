@@ -39,7 +39,6 @@ class EmployeesController extends Controller
     {
         $employee = Employee::find($id);
 
-        # Move to other function
         $except = $employee->slave()->get()->pluck('id')->toArray();
         $except = array_merge($except, [$employee->id]);
         $newEmployee = Employee::whereNotIn('id', $except)->inRandomOrder()->first();
@@ -121,11 +120,8 @@ class EmployeesController extends Controller
 
         $employee->update($request->validated());
 
-        # Move to other function
         if($request->photo !== null) {
-            # Move next line to uploadPhoto()
             $employee->photo()->delete();
-
             $this->uploadPhoto($request->photo, $employee, $adminId);
         }
 
