@@ -32,17 +32,13 @@ class TablesSeeder extends Seeder{
     public function run(){
         User::factory()->create();
 
-//        DB::table('users')->insert([
-//            'name' => 'Base User',
-//            'email' => 'base@email.com',
-//            'email_verified_at' => now(),
-//            'password' => Hash::make('rand'),
-//            'remember_token' => Str::random(10),
-//            'created_at' => now(),
-//            'updated_at' => now()
-//        ]);
-
         DB::table('positions')->insert([
+            ['name' => 'CEO',
+                'created_at' => now(),
+                'updated_at' => now(),
+                'admin_created_id' => User::all()->random()->id,
+                'admin_updated_id' => User::all()->random()->id],
+
             ['name' => 'Manager',
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -67,7 +63,7 @@ class TablesSeeder extends Seeder{
                 'admin_created_id' => User::all()->random()->id,
                 'admin_updated_id' => User::all()->random()->id],
         ]);
-        Employee::factory(25)->create();
+        Employee::factory(50000)->create();
         foreach(Employee::all() as $employee)
         {
             $path = $this->faker->image();
