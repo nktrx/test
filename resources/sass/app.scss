@@ -1,0 +1,41 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css?family=Nunito');
+
+// Variables
+@import 'variables';
+
+// Bootstrap
+@import '~bootstrap/scss/bootstrap';
+
+.swal2-header{
+    -webkit-flex-direction: row!important;
+    -ms-flex-direction: row!important;
+    flex-direction: row!important;
+}
+
+.swal2-actions {
+    justify-content: end!important;
+}
+#swal2-content{
+    margin-top: 1.5rem;
+    margin-bottom: 2.25rem;
+    text-align: start;
+}
+
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: block;
+    padding: 6px 12px;
+    cursor: pointer;
+    width: 200px;
+}
+.custom-content{
+    max-width: 700px!important;
+}
+
+.action-width {
+    min-width: 70px;
+}
